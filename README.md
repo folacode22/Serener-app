@@ -22,7 +22,7 @@ Devdependencies npm i -D
 
 
 ### config
-in the config folder, this is where db.js file, which is where i require mongoose which is a MongoDB object modelind tool designed to work in asynchronous environment.
+in the config folder, this is where db.js file, which is where i require mongoose which is a MongoDB(database) object modeling tool designed to work in asynchronous environment.
 
 ### models
 In the models folder, this is where a create my schema for the User  and the item.
@@ -84,20 +84,15 @@ router.put('/admin/:id',switchAdmin);
 index.js file handles the website startup,routing and other functions of the application and require other functions like modules,morgan,dotenv
 
 
-### API END POINT
-End point to view available and count orders
 
-
-End point to a make new order
-
-
-End point to update orders.
-
-
-End point to delete order
 
 
 Testing api
 postman
 
 publish test
+https://documenter.getpostman.com/view/22408266/VUxLwom9
+
+
+blog:
+https://dev.to/folacode22/handling-exception-in-nodejs-express-4kdo
