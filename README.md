@@ -90,8 +90,7 @@ index.js file handles the website startup,routing and other functions of the app
 ### Testing api
 postman
 
-publish test
-https://documenter.getpostman.com/view/22408266/VUxLwom9
+[publish test](https://documenter.getpostman.com/view/22408266/VUxNSTdF)
 
 
 
