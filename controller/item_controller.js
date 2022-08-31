@@ -11,12 +11,12 @@ exports.addItem = async (req, res) => {
   if (user.role !== "admin") {
     return res.status(401).json({ message: "Not authorized" });
   }
-  const { userId, drink, confectionary, price } = req.body;
+  const { userId, drinks, confectionary, price } = req.body;
 
   try {
     const item = await Item.create({
       userId,
-      drink,
+      drinks,
       confectionary,
       price,
     });

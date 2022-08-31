@@ -11,7 +11,7 @@ npm i
 Dependencies
 - express: this act as the framework
 - mongoose: 
-- morgan:
+- morgan:request logger
 - dotenv: this is use to secure our secret key
 - bcrypt: this is use to hash our password
 - jsonwebtoken:
