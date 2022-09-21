@@ -5,7 +5,8 @@ const itemSchema = new mongoose.Schema(
 
 products:{
   type:String,
-  enum:["Drinks","Confectionary"]
+  enum:["Drinks","Confectionary"],
+  default:"Drinks"
 },
 itemName:{
   type:String,

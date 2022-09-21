@@ -1,17 +1,17 @@
 const Item = require("../model/item_model");
-const User = require("../model/user_model");
+
 
 
 exports.addItem = async (req, res) => {
-  const id = req.params._id;
+  
 
   //authorization
   if (user.role !== "admin") {
     return res.status(401).json({ message: "Not authorized" });
   }
-  const {products,itemName,availableProduct, price } = req.body;
-
   try {
+    const { products, itemName, availableProduct, price } = req.body;
+    
     const item = await Item.create({
       products,
       itemName,
