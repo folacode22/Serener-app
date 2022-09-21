@@ -5,9 +5,6 @@ const User = require("../model/user_model");
 exports.addItem = async (req, res) => {
   const id = req.params._id;
 
-  //check if user exist in database
-  const user = await User.findOne({ userId: id });
-
   //authorization
   if (user.role !== "admin") {
     return res.status(401).json({ message: "Not authorized" });
