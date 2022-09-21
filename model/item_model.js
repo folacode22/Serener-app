@@ -2,27 +2,27 @@ const mongoose = require("mongoose");
 
 const itemSchema = new mongoose.Schema(
   {
-    userId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-    },
-    drinks: {
-      type: String,
-      enum: [
-        "hennessy",
-        "divaVodka",
-        "johnnieWalker",
-        "brandy",
-        "smirnoff",
-        "blackLabel",
-      ],
-    },
-    confectionary: {
-      type: String,
-      enum: ["candyPatisserie", "nutsCake", "creamCake"],
-    },
-    price: { type: Number },
+
+products:{
+  type:String,
+  enum:["Drinks","Confectionary"]
+},
+itemName:{
+  type:String,
+  required:true,
+
+},
+availableProduct:{
+  type:Number,
+  required:true
+},
+ price: { type: Number,
+required:true },
+
+
   },
+
+
   { timestamps: true }
 );
 

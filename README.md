@@ -1,8 +1,10 @@
 # serener
 Serener is a relaxation centre located in Abeokuta, Ogun State. It is known for
 selling expensive drinks and confectionery. Create an API endpoint for the
-following cases
-Users:
+following cases:
+
+
+
 
 ### package use
 npm install (package)
@@ -10,11 +12,11 @@ npm i
 
 Dependencies
 - express: this act as the framework
-- mongoose: 
-- morgan:request logger
-- dotenv: this is use to secure our secret key
-- bcrypt: this is use to hash our password
-- jsonwebtoken:
+- mongoose
+- morgan
+- dotenv
+- bcrypt
+- jsonwebtoken
 
 Devdependencies npm i -D
 - nodemon
@@ -63,16 +65,20 @@ middleware folder this where the Auth.js file is placed, which i require the jso
 
 ### router
 this is where the  request from collector is been imoprted to the routes,in which it is been routing with express in Node.express has a framework has an object corresponds to HTTP with a request method like GET,POST,PUT,DELETE etc. And also importing the Auth.js
+
 - model/item_routes
 router.post('/create', AdminAuth , addItem);
 
 router.get('/all',Auth, allItem);
 
+router.put("/purchase", Auth, selectItem);
+
 - model/item_routes
-router.post('/signup',userSignUp);
 
-router.post('/login',userLogIn);
+- register user:router.post('/signup',userSignUp);
 
+- login user:router.post('/login',userLogIn);
+- adi
 router.get('/alluser', AdminAuth, allUser);
 
 router.get('/user/:email',AdminAuth, findUserByEmail);
@@ -82,9 +88,6 @@ router.put('/admin/:id',switchAdmin);
 
 ### index.js
 index.js file handles the website startup,routing and other functions of the application and require other functions like modules,morgan,dotenv
-
-
-
 
 
 ### Testing api

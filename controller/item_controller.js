@@ -1,6 +1,7 @@
 const Item = require("../model/item_model");
 const User = require("../model/user_model");
 
+
 exports.addItem = async (req, res) => {
   const id = req.params._id;
 
@@ -11,13 +12,13 @@ exports.addItem = async (req, res) => {
   if (user.role !== "admin") {
     return res.status(401).json({ message: "Not authorized" });
   }
-  const { userId, drinks, confectionary, price } = req.body;
+  const {products,itemName,availableProduct, price } = req.body;
 
   try {
     const item = await Item.create({
-      userId,
-      drinks,
-      confectionary,
+      products,
+      itemName,
+      availableProduct,
       price,
     });
     return res.status(201).json(item);
@@ -40,4 +41,21 @@ exports.allItem = async (req, res) => {
   }
 };
 
-exports.selectItem = async (req, res) => {};
+exports.selectItem = async (req, res) => {
+  try {
+    const userId  = req.params.id;
+    const item = await Item.findOneAndUpdate({_id:id},
+      {$inc:{availableProduct:-1}},{new:true}
+      ) ;
+      if((item.availableProduct < 1)){
+item.avaiableProduct === 0
+await item.save()
+return res.status(401).json({message:'item not available'})
+
+      }
+      const data = {message:'item purchase complete',userId,item};
+      return res.status(200).json(data)
+  } catch (error) {
+      return res.status(500).json({ message: error.message });
+  }
+};

@@ -46,7 +46,7 @@ exports.userLogIn = async (req, res) => {
 
     //console.log(existingUser);
 
-    //if  user exist in database, check if user password is correct
+    //if  user exist in database, check if user password is correct(boolean function)
     const checkPassword = await bcrypt.compare(password, existingUser.password);
 
     //if user password is not coorect throw error ==> invalid credentials
